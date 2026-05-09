@@ -1,109 +1,109 @@
-# ❤️ Heart Disease Classification using SVM
+# College Clustering Analysis using K-Means
 
 ## Overview
-This project builds a Machine Learning model to predict heart disease using a Support Vector Machine (SVM) with an RBF kernel.
+This project applies Unsupervised Machine Learning techniques to cluster colleges and universities based on academic, financial, and demographic features.
 
-The main objective was to develop a clinically reliable classifier while minimizing False Negatives, since failing to detect heart disease cases can be dangerous in real-world healthcare applications.
+The main objective was to discover hidden patterns and group similar institutions using the K-Means clustering algorithm.
 
 The project includes:
-- Data cleaning
-- Feature preprocessing
-- Pipeline construction
-- Model training and evaluation
-- Visualization and analysis
+- Exploratory Data Analysis (EDA)
+- Data preprocessing
+- Feature scaling
+- K-Means clustering
+- Cluster evaluation
+- PCA visualization
 
 ---
 
-# Dataset Features
+# Dataset Description
 
-The dataset contains medical and clinical attributes including:
+The dataset contains information about **777 universities and colleges** with **19 features** describing academic, financial, and demographic characteristics.
 
-- Age
-- Sex
-- ChestPainType
-- RestingBP
-- Cholesterol
-- FastingBS
-- RestingECG
-- MaxHR
-- ExerciseAngina
-- Oldpeak
-- ST_Slope
-- HeartDisease (Target)
-
----
-
-# Data Cleaning
-
-Medically invalid values were identified and handled:
-
-- `RestingBP = 0`
-- `Cholesterol = 0`
-- `Oldpeak < 0`
-
-These values were converted into `NaN` and handled using:
-- **KNN Imputation (k=5)**
-
-This improved data quality while preserving dataset integrity.
+## Features Include
+- Applications received
+- Acceptance rate
+- Enrollment numbers
+- Tuition costs
+- Room and board expenses
+- Graduation rates
+- Student-to-faculty ratio
+- Percentage of alumni donations
+- Expenditure per student
+- Private/Public university label
 
 ---
 
-# Preprocessing Pipeline
+# Data Cleaning & Preprocessing
 
-A complete preprocessing workflow was implemented using:
-- `Pipeline`
-- `ColumnTransformer`
+The following preprocessing steps were performed:
 
-## Numerical Features
-- KNNImputer
-- StandardScaler
-
-## Categorical Features
-- OneHotEncoder for nominal features
-- OrdinalEncoder for ordered features (`ST_Slope`)
-
-The pipeline ensures:
-- No data leakage
-- Consistent preprocessing
-- Proper feature transformation
-- Compatibility with SVM models
+- Checked for missing values and duplicates
+- Handled outliers in selected numerical features
+- Applied feature scaling using `StandardScaler`
+- Encoded categorical variables
+- Prepared data for clustering analysis
 
 ---
 
-# Model
+# Exploratory Data Analysis (EDA)
+
+Performed extensive EDA to understand:
+- Feature distributions
+- Correlations between variables
+- Tuition and expenditure patterns
+- Differences between private and public institutions
+
+Visualizations included:
+- Histograms
+- Boxplots
+- Correlation heatmaps
+- Scatter plots
+
+---
+
+# Clustering Model
 
 ## Algorithm
-Support Vector Machine (SVM)
+K-Means Clustering
 
-## Kernel
-RBF (Radial Basis Function)
+## Why K-Means?
+K-Means was selected because:
+- It is efficient for grouping unlabeled data
+- Works well with scaled numerical features
+- Suitable for discovering hidden patterns in institutional data
 
-The dataset is non-linearly separable, making the RBF kernel a suitable choice for capturing complex decision boundaries.
+---
+
+# Cluster Evaluation
+
+The clustering performance was evaluated using:
+
+- Silhouette Score
+- Elbow Method
+- PCA visualization
+
+The silhouette score helped measure how well-separated the clusters were.
+
+---
+
+# PCA Visualization
+
+Principal Component Analysis (PCA) was applied to:
+- Reduce dimensionality
+- Visualize clusters in 2D space
+- Compare cluster separation visually
 
 ---
 
 # Key Contributions
 
-- Performed data cleaning and handled medically invalid values using KNN Imputation.
-- Built a complete preprocessing pipeline using `Pipeline` and `ColumnTransformer`.
-- Applied feature scaling, encoding, and transformation techniques for numerical and categorical features.
-- Developed and optimized an SVM classifier with RBF kernel for non-linear classification.
-- Focused on minimizing False Negatives to improve clinical reliability of predictions.
-- Evaluated model performance using Accuracy, Precision, Recall, and F1-Score metrics.
-- Visualized dataset patterns and model insights using Matplotlib and Seaborn.
-
----
-
-# Results (Test Set)
-
-| Metric | Score |
-|---|---|
-| Accuracy | ~88% |
-| Precision | ~86% |
-| Recall | ~93% |
-| F1 Score | ~89% |
-
-The high recall score demonstrates strong capability in detecting heart disease cases while reducing missed diagnoses.
+- Performed full exploratory data analysis and preprocessing workflow.
+- Applied scaling and feature transformation techniques for clustering.
+- Built and evaluated K-Means clustering models.
+- Used silhouette score and elbow method for cluster evaluation.
+- Visualized clusters using PCA projections.
+- Compared clustering patterns between private and public universities.
+- Analyzed academic and financial patterns across institutions.
 
 ---
 
@@ -121,12 +121,11 @@ The high recall score demonstrates strong capability in detecting heart disease 
 # Project Structure
 
 ```bash
-Heart-Disease-classification-using-SVM/
+College-Clustering-Analysis-using-KMeans/
 │
 ├── data/
 ├── notebooks/
 ├── images/
-├── models/
 ├── README.md
 └── requirements.txt
 ```
@@ -153,8 +152,10 @@ Open the notebook and run all cells.
 
 # GitHub Repository
 
-GitHub Repo:  
-https://github.com/ALAAMEKAWY56/Heart-Disease-classification-using-SVM
+Add your repository link here:
+```bash
+https://github.com/ALAAMEKAWY56/College-Clustering-Analysis-using-K-Means
+```
 
 ---
 
